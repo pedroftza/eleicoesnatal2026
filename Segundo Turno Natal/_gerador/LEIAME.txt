@@ -1,0 +1,21 @@
+Gerador dos relatórios do 2º turno e do comparativo (Natal, 2026)
+
+1. Baixe do Portal de Dados Abertos do TSE, numa pasta própria (ex.: tse):
+   - votacao_secao_2026_RN.zip e votacao_secao_2026_BR.zip (votação por seção)
+   - detalhe_votacao_secao_2026.zip (detalhe da apuração; usa os CSV _RN e _BR)
+   Extraia votacao_secao_2026_RN.csv, detalhe_votacao_secao_2026_RN.csv e detalhe_votacao_secao_2026_BR.csv.
+   Do arquivo BR de votação, só as linhas de Natal são usadas (vot_br_natal.csv):
+     unzip -p votacao_secao_2026_BR.zip | head -1 > vot_br_natal.csv
+     unzip -p votacao_secao_2026_BR.zip | grep -a ';"NATAL";' >> vot_br_natal.csv
+
+2. Gere os dados (bairro e coordenadas vêm do relatório do 1º turno):
+     python -I build_data.py <pasta tse> "../../Primeiro Turno Natal/index.html" out
+     python -I build_comparativo_data.py out
+   O script confere, seção a seção, os votos com o comparecimento do arquivo de detalhe.
+
+3. Monte os relatórios:
+     python -I splice.py presidente_t2      (aplica <caso>_header.html e <caso>_analise.html ao <caso>_body.html)
+     python -I splice.py governador_t2
+     python -I build_reports.py "../../Primeiro Turno Natal/index.html" out ..
+
+stats.py imprime as estatísticas usadas para escrever os textos (ex.: python -I stats.py out presidente_t2 13 22).

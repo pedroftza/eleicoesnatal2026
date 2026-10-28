@@ -1,0 +1,239 @@
+<div class="nt">
+  <header class="nt-head" id="topo">
+    <h1>Natal: 1º × 2º turno 2026, por seção</h1>
+    <p class="nt-take" id="takeaway">
+      Do 1º para o 2º turno, a vantagem de Lula sobre Flávio Bolsonaro em Natal passou de <b data-source="resumo" data-field="margem1" data-fmt="pp" class="dash-skeleton">—</b> para <b data-source="resumo" data-field="margem2" data-fmt="pp" class="dash-skeleton">—</b> e cresceu em todos os bairros. Para governador, Allyson Bezerra saiu de terceiro na capital (<b data-source="resumo" data-field="allyson1" data-fmt="pct" class="dash-skeleton">—</b>) para vencedor (<b data-source="resumo" data-field="allyson2" data-fmt="pct" class="dash-skeleton">—</b>), crescendo mais onde Álvaro Dias tinha sido forte. A abstenção caiu em quase todas as seções.
+    </p>
+    <p class="nt-meta">Eleições de 4 e 25 de outubro de 2026 · Fontes: TSE, Portal de Dados Abertos: “Votação por seção eleitoral – 2026” (presidente e RN) e “Detalhe da apuração por seção eleitoral – 2026” (gerados em 26/10/2026), filtrados para o município de Natal (RN); bairro e coordenadas dos locais: “Eleitorado por local de votação – 2026” (gerado em 11/10/2026); contorno do município: IBGE (malha de 2010); rio Potengi: © colaboradores do OpenStreetMap (ODbL).</p>
+  </header>
+
+  <div class="nt-tiles" id="resumo">
+    <div class="nt-tile">
+      <div class="lbl"><span class="nt-sw" style="background:#D7332F"></span>Margem de Lula sobre Flávio</div>
+      <div class="big" data-source="resumo" data-field="margem2" data-fmt="pp">—</div>
+      <div class="sub">no 1º turno: <span data-source="resumo" data-field="margem1" data-fmt="pp">—</span></div>
+    </div>
+    <div class="nt-tile">
+      <div class="lbl">Seções que passaram de Flávio para Lula</div>
+      <div class="big" data-source="resumo" data-field="vira_lula" data-fmt="int">—</div>
+      <div class="sub">no sentido contrário: <span data-source="resumo" data-field="vira_flavio" data-fmt="int">—</span></div>
+    </div>
+    <div class="nt-tile">
+      <div class="lbl"><span class="nt-sw" style="background:#1E9E62"></span>Allyson Bezerra · governador</div>
+      <div class="big" data-source="resumo" data-field="allyson2" data-fmt="pct">—</div>
+      <div class="sub">no 1º turno: <span data-source="resumo" data-field="allyson1" data-fmt="pct">—</span> (3º lugar)</div>
+    </div>
+    <div class="nt-tile">
+      <div class="lbl">Abstenção (presidente)</div>
+      <div class="big" data-source="resumo" data-field="abst2" data-fmt="pct">—</div>
+      <div class="sub">no 1º turno: <span data-source="resumo" data-field="abst1" data-fmt="pct">—</span></div>
+    </div>
+    <div class="nt-tile">
+      <div class="lbl">Brancos e nulos (governador)</div>
+      <div class="big" data-source="resumo" data-field="gbn2" data-fmt="pct">—</div>
+      <div class="sub">no 1º turno: <span data-source="resumo" data-field="gbn1" data-fmt="pct">—</span></div>
+    </div>
+  </div>
+
+  <section class="nt-sec" id="presidente">
+    <h2>Presidente: o que mudou</h2>
+    <div class="nt-grid">
+      <div class="nt-card">
+        <h3>Votos nos dois turnos</h3>
+        <p class="nt-note">Votos de cada candidato, brancos e nulos e abstenções, somando as seções de Natal. Lula ganhou bem mais votos do que Flávio entre um turno e outro.</p>
+        <div class="nt-chart dash-skeleton" id="ch-votos-p" data-source="resumo" style="min-height:260px"></div>
+      </div>
+      <div class="nt-card">
+        <h3>Por zona eleitoral</h3>
+        <p class="nt-note">% de Lula nos válidos e margem de Lula sobre Flávio (p.p.) em cada turno. A margem cresceu nas cinco zonas, menos na zona 3.</p>
+        <div class="nt-tblwrap" style="max-height:none">
+          <table class="nt-tbl" id="tb-zona-p" data-source="por_zona">
+            <thead><tr>
+              <th data-field="zona"><button type="button">Zona</button></th>
+              <th class="num" data-field="lula1"><button type="button">Lula 1º</button></th>
+              <th class="num" data-field="lula2"><button type="button">Lula 2º</button></th>
+              <th class="num nt-hide-sm" data-field="margem1"><button type="button">Margem 1º</button></th>
+              <th class="num" data-field="margem2"><button type="button">Margem 2º</button></th>
+              <th class="num" data-field="virada"><button type="button">Variação</button></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="nt-mapgrid">
+      <div class="nt-card">
+        <h3>Mapa da variação da margem de Lula</h3>
+        <p class="nt-note">Quanto a margem de Lula sobre Flávio mudou do 1º para o 2º turno, em pontos percentuais. Cada círculo é um local de votação (tamanho proporcional ao número de seções); o fundo é a média ponderada das seções próximas. Mais escuro: Lula cresceu mais.</p>
+        <div class="nt-maptools"><label><input type="checkbox" id="map-zonas-p" checked> Limites das zonas</label></div>
+        <div id="map-legend-p"></div>
+        <div class="nt-map dash-skeleton" id="nt-map-p" data-source="por_local contorno rio" role="img" aria-label="Mapa de Natal com a variação da margem de Lula entre o 1º e o 2º turno por local de votação"></div>
+      </div>
+      <div class="nt-card">
+        <h3>Por bairro</h3>
+        <p class="nt-note">Margem de Lula sobre Flávio em cada turno. Abre ordenada do bairro onde a margem menos cresceu ao bairro onde mais cresceu; clique no cabeçalho para mudar a ordem.</p>
+        <div class="nt-tblwrap nt-fill">
+          <table class="nt-tbl" id="tb-bairro-p" data-source="por_bairro">
+            <thead><tr>
+              <th data-field="bairro"><button type="button">Bairro</button></th>
+              <th class="nt-hide-sm" data-field="zonas"><button type="button">Zona</button></th>
+              <th class="num" data-field="margem1"><button type="button">Margem 1º</button></th>
+              <th class="num" data-field="margem2"><button type="button">Margem 2º</button></th>
+              <th class="num" data-field="virada"><button type="button">Variação</button></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="nt-card">
+      <h3>Cada seção nos dois turnos</h3>
+      <p class="nt-note">Cada ponto é uma seção: margem de Lula sobre Flávio no 1º turno (horizontal) e no 2º turno (vertical). A linha tracejada marca “nenhuma mudança”; quase todos os pontos ficam acima dela, ou seja, Lula melhorou em quase todas as seções. Vermelho: Lula à frente no 2º turno; azul: Flávio à frente. Passe o cursor para ver o local.</p>
+      <div class="nt-chart dash-skeleton" id="ch-disp-p" data-source="por_secao" style="min-height:300px"></div>
+    </div>
+  </section>
+
+  <section class="nt-sec" id="governador">
+    <h2>Governador: o que mudou</h2>
+    <div class="nt-grid">
+      <div class="nt-card">
+        <h3>Votos nos dois turnos</h3>
+        <p class="nt-note">Votos de cada candidato, brancos e nulos e abstenções, somando as seções de Natal. Álvaro Dias, o mais votado na capital no 1º turno, ficou fora do 2º.</p>
+        <div class="nt-chart dash-skeleton" id="ch-votos-g" data-source="resumo" style="min-height:300px"></div>
+      </div>
+      <div class="nt-card">
+        <h3>Álvaro no 1º turno × crescimento de Allyson</h3>
+        <p class="nt-note">Cada ponto é uma seção: % de Álvaro Dias no 1º turno (horizontal) e quanto Allyson Bezerra cresceu do 1º para o 2º turno, em pontos dos válidos (vertical). A linha tracejada é a tendência. Correlação: <b data-source="regressao" data-field="corr" data-fmt="corr" class="dash-skeleton">—</b>.</p>
+        <div class="nt-chart dash-skeleton" id="ch-disp-g" data-source="por_secao regressao" style="min-height:300px"></div>
+      </div>
+    </div>
+    <div class="nt-mapgrid">
+      <div class="nt-card">
+        <h3>Mapa do crescimento de Allyson</h3>
+        <p class="nt-note">Quanto o percentual de Allyson nos válidos subiu do 1º para o 2º turno, em pontos percentuais. Mais escuro: crescimento maior. Ele cresceu em toda a cidade, mais nos bairros centrais ao sul do rio.</p>
+        <div class="nt-maptools"><label><input type="checkbox" id="map-zonas-g" checked> Limites das zonas</label></div>
+        <div id="map-legend-g"></div>
+        <div class="nt-map dash-skeleton" id="nt-map-g" data-source="por_local contorno rio" role="img" aria-label="Mapa de Natal com o crescimento de Allyson Bezerra entre o 1º e o 2º turno por local de votação"></div>
+      </div>
+      <div class="nt-card">
+        <h3>Por bairro</h3>
+        <p class="nt-note">% de Álvaro no 1º turno e evolução de Allyson e de Cadu nos válidos. Abre ordenada do bairro onde Allyson mais cresceu; clique no cabeçalho para mudar a ordem.</p>
+        <div class="nt-tblwrap nt-fill">
+          <table class="nt-tbl" id="tb-bairro-g" data-source="por_bairro">
+            <thead><tr>
+              <th data-field="bairro"><button type="button">Bairro</button></th>
+              <th class="num" data-field="alvaro1"><button type="button">Álvaro 1º</button></th>
+              <th class="num nt-hide-sm" data-field="allyson2"><button type="button">Allyson 1º → 2º</button></th>
+              <th class="num" data-field="ganho_allyson"><button type="button">Ganho Allyson</button></th>
+              <th class="num nt-hide-sm" data-field="carlos2"><button type="button">Cadu 1º → 2º</button></th>
+              <th class="num" data-field="ganho_carlos"><button type="button">Ganho Cadu</button></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="nt-card">
+      <h3>Por zona eleitoral</h3>
+      <p class="nt-note">% dos válidos em cada turno. No 1º turno, Álvaro liderou nas cinco zonas; no 2º, Allyson.</p>
+      <div class="nt-tblwrap" style="max-height:none">
+        <table class="nt-tbl" id="tb-zona-g" data-source="por_zona">
+          <thead><tr>
+            <th data-field="zona"><button type="button">Zona</button></th>
+            <th class="num" data-field="alvaro1"><button type="button">Álvaro 1º</button></th>
+            <th class="num nt-hide-sm" data-field="carlos1"><button type="button">Cadu 1º</button></th>
+            <th class="num nt-hide-sm" data-field="allyson1"><button type="button">Allyson 1º</button></th>
+            <th class="num" data-field="allyson2"><button type="button">Allyson 2º</button></th>
+            <th class="num" data-field="carlos2"><button type="button">Cadu 2º</button></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="nt-sec" id="abstencao">
+    <h2>Abstenção</h2>
+    <div class="nt-grid">
+      <div class="nt-card">
+        <h3>Abstenção por zona nos dois turnos</h3>
+        <p class="nt-note">Abstenção = eleitores aptos − eleitores que votaram, em % dos aptos (eleição para presidente). Caiu em todas as zonas.</p>
+        <div class="nt-chart dash-skeleton" id="ch-abst-z" data-source="por_zona resumo" style="min-height:240px"></div>
+      </div>
+      <div class="nt-card">
+        <h3>Por bairro</h3>
+        <p class="nt-note">Ausentes e abstenção (presidente) em cada turno. Abre ordenada do bairro onde a abstenção mais caiu; clique no cabeçalho para mudar a ordem.</p>
+        <div class="nt-tblwrap" style="max-height:24rem">
+          <table class="nt-tbl" id="tb-bairro-a" data-source="por_bairro">
+            <thead><tr>
+              <th data-field="bairro"><button type="button">Bairro</button></th>
+              <th class="num nt-hide-sm" data-field="p1_abst"><button type="button">Ausentes 1º</button></th>
+              <th class="num nt-hide-sm" data-field="p2_abst"><button type="button">Ausentes 2º</button></th>
+              <th class="num" data-field="abst1"><button type="button">% 1º</button></th>
+              <th class="num" data-field="abst2"><button type="button">% 2º</button></th>
+              <th class="num" data-field="var_abst"><button type="button">Variação</button></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nt-sec" id="locais">
+    <h2>Locais de votação</h2>
+    <div class="nt-card">
+      <h3>Cada escola nos dois turnos</h3>
+      <p class="nt-note">Margem de Lula sobre Flávio, % de Allyson e abstenção (presidente) no 1º e no 2º turno, somando as seções de cada local. Abre ordenada do local onde a margem de Lula menos cresceu; clique num cabeçalho para mudar a ordem.</p>
+      <div class="nt-tools">
+        <input type="search" id="q-local" placeholder="Buscar escola, bairro, endereço ou zona" aria-label="Buscar local de votação">
+        <span class="cnt" id="n-local"></span>
+      </div>
+      <div class="nt-tblwrap">
+        <table class="nt-tbl" id="tb-local" data-source="por_local">
+          <thead><tr>
+            <th data-field="nome_local"><button type="button">Local</button></th>
+            <th class="num nt-hide-sm" data-field="margem1"><button type="button">Margem 1º</button></th>
+            <th class="num" data-field="margem2"><button type="button">Margem 2º</button></th>
+            <th class="num" data-field="virada"><button type="button">Variação</button></th>
+            <th class="num" data-field="allyson2"><button type="button">Allyson 1º → 2º</button></th>
+            <th class="num nt-hide-sm" data-field="abst2"><button type="button">Abst. 1º → 2º</button></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="nt-sec nt-analise" id="analise">
+    <h2>Análise: o que mudou entre os turnos</h2>
+    <div class="nt-card nt-prose">
+      <h3>1. Presidente: Lula ampliou a vantagem em toda a cidade</h3>
+      <p>No 1º turno, Lula teve 49,0% dos válidos em Natal e Flávio Bolsonaro 44,2%, uma diferença de 21.051 votos. No 2º, foram 56,0% contra 44,0%, e a diferença subiu para 55.311 votos. Lula ganhou 44.365 votos entre os turnos; Flávio, 10.105. Os cerca de 7% que tinham ido para outros candidatos no 1º turno e os cerca de 22 mil eleitores a mais que compareceram no 2º turno ajudam a explicar a diferença, mas os dados por seção não permitem dizer quem votou em quem.</p>
+      <p>O crescimento foi geral. A margem de Lula subiu nas cinco zonas, nos 34 bairros e em <b class="nt-v" data-source="resumo" data-field="lula_cresce" data-fmt="int">—</b> das <b class="nt-v" data-source="resumo" data-field="secoes" data-fmt="int">—</b> seções. <b class="nt-v" data-source="resumo" data-field="vira_lula" data-fmt="int">—</b> seções em que Flávio tinha vencido no 1º turno passaram para Lula, e nenhuma fez o caminho inverso. Com isso, a zona 2, onde Flávio tinha ficado à frente, e bairros como Lagoa Nova, Petrópolis e Cidade Alta passaram para o lado de Lula ou para o empate.</p>
+      <p>O mapa da cidade não mudou de forma: os lugares mais favoráveis a cada candidato continuaram os mesmos (a correlação entre a margem de cada seção no 1º e no 2º turno é de 0,96). O que mudou foi a intensidade. A margem cresceu menos nos redutos de Flávio, como Tirol (+3,1 p.p.), Candelária (+3,6), Capim Macio (+3,7) e Barro Vermelho (+4,0), e mais nos bairros onde Lula já era forte, como Guarapes (+10,5), Mãe Luiza (+10,0), Felipe Camarão (+9,4) e Bom Pastor (+9,2). Ou seja, a cidade ficou um pouco mais dividida entre centro e periferia.</p>
+
+      <h3>2. Governador: os votos de Álvaro parecem ter ido para Allyson</h3>
+      <p>No 1º turno, Álvaro Dias foi o mais votado em Natal (39,6% dos válidos), à frente de Cadu (35,4%) e de Allyson Bezerra (24,4%). Sem Álvaro no 2º turno, Allyson venceu na capital com 52,9%, contra 47,1% de Cadu. Allyson ganhou 134.651 votos entre os turnos; Cadu, 63.462.</p>
+      <p>O padrão geográfico desse crescimento é muito nítido. Allyson cresceu mais exatamente onde Álvaro tinha sido mais forte: no Tirol (Álvaro tinha 51,2%), Allyson subiu 43,1 pontos; em Barro Vermelho (49,0%), 41,1 pontos; em Candelária (45,3%), 37,8. Onde Álvaro era mais fraco, como Mãe Luiza (30,1%) e Guarapes (35,5%), Allyson cresceu só 14 a 15 pontos, e quem mais cresceu foi Cadu. Seção a seção, a correlação entre o % de Álvaro no 1º turno e o ganho de Allyson é de <b class="nt-v" data-source="regressao" data-field="corr" data-fmt="corr">—</b>: cada ponto a mais de Álvaro numa seção corresponde, em média, a <b class="nt-v" data-source="regressao" data-field="inclinacao" data-fmt="num1">—</b> ponto a mais no crescimento de Allyson.</p>
+      <p>Uma estimativa aproximada, feita por regressão entre as seções (o método ecológico de Goodman), sugere que algo como nove em cada dez eleitores de Álvaro no 1º turno votaram em Allyson no 2º, e que quase todos os eleitores de Cadu no 1º turno continuaram com ele. É só uma estimativa: ela supõe que eleitores de um mesmo candidato se comportam de forma parecida em toda a cidade, o que pode não ser verdade, e não diz nada sobre nenhum eleitor em particular.</p>
+      <p>Esse movimento também explica por que o mapa do governador no 2º turno é tão diferente do mapa do presidente: Allyson venceu com mais folga nos bairros centrais, onde Flávio Bolsonaro também venceu, e Cadu foi melhor em Mãe Luiza, Guarapes, Rocas e Santos Reis, que estão entre os bairros mais favoráveis a Lula.</p>
+
+      <h3>3. A abstenção caiu</h3>
+      <p>Na eleição para presidente, a abstenção caiu de 20,5% para 16,6% (de 117.568 para 95.253 ausentes), e diminuiu em <b class="nt-v" data-source="resumo" data-field="abst_cai" data-fmt="int">—</b> das <b class="nt-v" data-source="resumo" data-field="secoes" data-fmt="int">—</b> seções. A queda foi maior nas zonas 4 (−4,8 pontos) e 69 (−4,7) e menor na zona 2 (−2,9). Entre os bairros, caiu mais em N. S. da Apresentação (−5,7), Felipe Camarão (−5,6), Cidade Nova (−5,0) e Planalto (−4,8), e menos em Barro Vermelho (−1,7) e Cidade Alta (−1,8). Ponta Negra continuou com a maior taxa da cidade nos dois turnos (25,0% e 20,5%).</p>
+      <p>No país, a abstenção também caiu, de 21,08% para 19,22%, mas menos que em Natal. Onde a abstenção caiu mais, a margem de Lula cresceu um pouco mais, mas a relação é fraca (correlação de −0,14 entre seções) e não permite dizer que os novos eleitores votaram em um candidato específico.</p>
+
+      <h3>4. Brancos e nulos</h3>
+      <p>Para presidente, brancos e nulos passaram de 4,2% para 3,5% dos votos registrados. Para governador, a queda foi maior, de 8,0% para 5,9%, mas continuaram acima dos de presidente. Em todas as zonas os brancos e nulos para governador diminuíram, mais nas zonas 1, 4 e 69 (de 9 a 10% no 1º turno para cerca de 6%) e quase nada na zona 3 (de 4,9% para 4,7%).</p>
+
+      <h3>5. Limites desta análise</h3>
+      <ul>
+        <li>Os dados são por seção, não por eleitor. Comparar turnos mostra como cada lugar mudou, não como cada pessoa mudou de voto. Os números sobre “para onde foram os votos” são estimativas indiretas.</li>
+        <li>As seções e os locais de votação são os mesmos nos dois turnos, e o número de eleitores aptos praticamente não mudou. A comparação é feita seção a seção.</li>
+        <li>Os mapas mostram onde as pessoas votam (a escola), que nem sempre é perto de onde moram. Os limites das zonas no mapa são aproximados, e sete escolas foram posicionadas no centro do seu bairro, porque a coordenada delas no cadastro do TSE é inválida.</li>
+        <li>Os votos de cada seção foram conferidos com o comparecimento do arquivo oficial do TSE de detalhe da apuração, nos dois turnos e para os dois cargos, e batem em todas as seções consideradas.</li>
+        <li>O estudo inclui todas as seções de Natal, inclusive a seção especial instalada numa unidade prisional (zona 1, seção 642), no Centro de Detenção Provisória de Parnamirim. Como o local fica fora de Natal, essa seção entra nos totais da cidade, nas zonas e nas tabelas de seções e de locais, mas não aparece nos mapas nem nas tabelas por bairro. Os números do Brasil citados no texto foram somados a partir dos arquivos por seção do TSE.</li>
+      </ul>
+    </div>
+  </section>
+</div>
